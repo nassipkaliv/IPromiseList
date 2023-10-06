@@ -14,24 +14,24 @@ const CustomSwitch: React.FC<CustomSwitchProps> = ({ value, onChange }) => {
           styles.buttonContainer,
           {
             backgroundColor: !value ? '#FFF' : '#121014',
-            borderWidth: !value ? 1 : 0, // Устанавливаем borderWidth только для неактивного элемента
+            borderWidth: value ? 1 : 0, 
           },
         ]}
         onPress={() => onChange()}
       >
-        <Text style={{ color: !value ? '#000' : '#fff' }}>Log In</Text>
+        <Text style={{ color: !value ? '#000' : '#5C5C5D' }}>Log In</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[
           styles.buttonContainer,
           {
             backgroundColor: value ? '#FFF' : '#121014',
-            borderWidth: value ? 1 : 0, // Устанавливаем borderWidth только для активного элемента
+            borderWidth: !value ? 1 : 0, 
           },
         ]}
         onPress={() => onChange()}
       >
-        <Text style={{ color: value ? '#000' : '#fff' }}>Sign Up</Text>
+        <Text style={{ color: value ? '#000' : '#5C5C5D' }}>Sign Up</Text>
       </TouchableOpacity>
     </View>
   );

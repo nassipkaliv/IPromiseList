@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, Switch, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { LinearGradient } from "expo-linear-gradient";
 import CustomSwitch from '../../components/CustomSwitch';
+import LinearTextGradient from "expo-linear-gradient";
+import GradientText from '../../components/GradientText';
+
 
 const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -57,7 +61,9 @@ const LoginScreen: React.FC = () => {
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>Log in</Text>
+        <GradientText colors={['#9BD683', '#FBEC67']} style={styles.loginButtonText}>
+          Log In
+        </GradientText>
       </TouchableOpacity>
     </View>
   );
@@ -143,12 +149,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 'auto',
-    
     marginBottom: 48, 
+    
   },
   loginButtonText: {
-    color: 'var(--1, linear-gradient(90deg, #9BD683 27.58%, #FBEC67 71.23%))',
-    fontSize: 16,
+    fontSize: 20,
+    opacity: 0,
+    fontWeight: 400,
+    lineHeight: 20.5,
   },
 });
 
