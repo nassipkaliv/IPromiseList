@@ -7,7 +7,7 @@ import RegisterScreen from './views/AuthScreen/RegisterScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <RegisterScreen />  
+      <StartScreen />  
     </View>
   );
 }
