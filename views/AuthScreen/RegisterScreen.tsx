@@ -6,8 +6,13 @@ import LinearTextGradient from "expo-linear-gradient";
 import GradientText from '../../components/GradientText';
 import { useFonts } from 'expo-font';
 import Font from '../../components/Font';
+import { RootStackParamList } from '../../components/types/types';
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-const RegisterScreen: React.FC = () => {
+type Props = NativeStackScreenProps<RootStackParamList, "Register">;
+
+
+const RegisterScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -59,7 +64,7 @@ const RegisterScreen: React.FC = () => {
         />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={() => navigate("Password")}>
         <GradientText colors={['#9BD683', '#FBEC67']} style={styles.loginButtonText}>
           Next
         </GradientText>
@@ -94,7 +99,6 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRadius: 11,
     fontFamily: Font['Gilroy-Medium'],
-    color: '#fff'
   },
   switch: {
     flexDirection: 'row',

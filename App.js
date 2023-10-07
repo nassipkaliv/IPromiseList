@@ -7,13 +7,15 @@ import font from './components/font/font';
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import PasswordScreen from './views/AuthScreen/PasswordScreen';
+import Navigation from './components/AuthNavigator';
+
 
 export default function App() {
   const [fontsLoaded] = useFonts(font);
 
   return !fontsLoaded ? null : (
     <SafeAreaProvider>
-      <PasswordScreen />
+      <Navigation />
     </SafeAreaProvider>
   );
 }

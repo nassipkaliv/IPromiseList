@@ -3,9 +3,13 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import GradientText from '../../components/GradientText';
 import Font from '../../components/Font';
+import { RootStackParamList } from '../../components/types/types';
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 
-export default function StartScreen() {
+type Props = NativeStackScreenProps<RootStackParamList, "Start">;
+
+const StartScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   return (
     <View style={styles.container}>
       <ImageBackground 
@@ -15,7 +19,7 @@ export default function StartScreen() {
         <Text style={styles.subTitle}>Welcome to</Text>
         <Text style={styles.title}>I Promise List</Text>
         <View style={styles.details}>
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={() => navigate("Login")}>
             <GradientText colors={['#9BD683', '#FBEC67']} style={styles.btnText}>
               Get Started
             </GradientText>
@@ -89,3 +93,5 @@ const styles = StyleSheet.create({
     fontFamily: Font["Gilroy-Regular"]
   }
 });
+
+export default StartScreen;

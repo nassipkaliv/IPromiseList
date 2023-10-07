@@ -6,10 +6,13 @@ import LinearTextGradient from "expo-linear-gradient";
 import GradientText from '../../components/GradientText';
 import { useFonts } from 'expo-font';
 import Font from '../../components/Font';
+import { RootStackParamList } from '../../components/types/types';
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
 
+type Props = NativeStackScreenProps<RootStackParamList, "Login">;
 
-const LoginScreen: React.FC = () => {
+const LoginScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
@@ -27,7 +30,7 @@ const LoginScreen: React.FC = () => {
     <View style={styles.container}>
       <Text style={styles.title}>I Promise list</Text>
 
-      <CustomSwitch value={isLogIn} onChange={toggleSwitch} />
+      <CustomSwitch value={isLogIn} onChange={toggleSwitch}  />
 
       <TextInput
         style={styles.input}
@@ -63,7 +66,7 @@ const LoginScreen: React.FC = () => {
         />
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={() => navigate("Navigation")}>
         <GradientText colors={['#9BD683', '#FBEC67']} style={styles.loginButtonText}>
           Log In
         </GradientText>
