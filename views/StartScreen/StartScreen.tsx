@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
 import GradientText from '../../components/GradientText';
+import Font from '../../components/Font';
+
 
 export default function StartScreen() {
   return (
@@ -45,13 +47,14 @@ const styles = StyleSheet.create({
     marginTop: 106,
     fontSize: 14,
     lineHeight: 33.5,
-    fontFamily: 'Gilroy Regular',
+    fontFamily: Font["Gilroy-Regular"],
   },
   title: {
     color: '#a0d780',
     textAlign: 'center',
     fontSize: 30,
     lineHeight: 33.5,
+    fontFamily: Font["Gilroy-Medium"]
   },
   details: {
     alignItems: 'center',
@@ -74,6 +77,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     justifyContent: 'center',
     marginLeft: -25,
+    fontFamily: Font["Gilroy-Medium"]
   },
   descriptionContainer: {
     alignItems: 'center',
@@ -82,5 +86,6 @@ const styles = StyleSheet.create({
     color: '#EFEFEF',
     textAlign: 'center',
     fontSize: 14,
+    fontFamily: Font["Gilroy-Regular"]
   }
 });

@@ -4,6 +4,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import CustomSwitch from '../../components/CustomSwitch';
 import LinearTextGradient from "expo-linear-gradient";
 import GradientText from '../../components/GradientText';
+import { useFonts } from 'expo-font';
+import Font from '../../components/Font';
+
 
 
 const LoginScreen: React.FC = () => {
@@ -78,7 +81,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     textAlign: 'center',
-    fontFamily: 'Gilroy-Regular',
+    fontFamily: Font["Gilroy-Regular"],
     fontSize: 30,
     fontWeight: '400',
     lineHeight: 33.5,
@@ -94,12 +97,14 @@ const styles = StyleSheet.create({
     borderColor: '#3A3839',
     borderStyle: 'solid',
     borderRadius: 11,
+    fontFamily: Font["Gilroy-Medium"],
   },
   switch: {
     flexDirection: 'row',
     alignItems: 'center',
     width: 50,
     marginBottom: 20,
+    fontFamily: Font["Gilroy-Medium"],
   },
   forgotPassword: {
     color: '#5C5C5D',
@@ -107,6 +112,7 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     display: 'flex',
     marginLeft: -150,
+    fontFamily: Font["Gilroy-Regular"],
   },
   lineContainer: {
     flexDirection: 'row',
@@ -123,6 +129,7 @@ const styles = StyleSheet.create({
     color: '#3A3839',
     fontSize: 12,
     marginHorizontal: 10,
+    fontFamily: Font["Gilroy-Medium"],
   },
   googleButton: {
     display: 'flex',
@@ -140,6 +147,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 15,
     margin: 12,
+    fontFamily: Font["Gilroy-Medium"],
   },
   loginButton: {
     width: '90%',
@@ -157,6 +165,7 @@ const styles = StyleSheet.create({
     opacity: 0,
     fontWeight: 400,
     lineHeight: 20.5,
+    fontFamily: Font["Gilroy-Medium"],
   },
 });
 

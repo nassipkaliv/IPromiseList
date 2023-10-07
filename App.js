@@ -3,19 +3,16 @@ import { StyleSheet, Text, View } from 'react-native';
 import LoginScreen from './views/AuthScreen/LoginScreen';
 import StartScreen from './views/StartScreen/StartScreen';
 import RegisterScreen from './views/AuthScreen/RegisterScreen';
+import font from './components/font/font';
+import { useFonts } from "expo-font";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <StartScreen />  
-    </View>
+  const [fontsLoaded] = useFonts(font);
+
+  return !fontsLoaded ? null : (
+    <SafeAreaProvider>
+      <StartScreen />
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-   
-  },
-});
