@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderRadius: 11,
     fontFamily: Font['Gilroy-Medium'],
+    color: '#fff'
   },
   switch: {
     flexDirection: 'row',

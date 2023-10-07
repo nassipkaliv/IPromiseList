@@ -6,13 +6,14 @@ import RegisterScreen from './views/AuthScreen/RegisterScreen';
 import font from './components/font/font';
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import PasswordScreen from './views/AuthScreen/PasswordScreen';
 
 export default function App() {
   const [fontsLoaded] = useFonts(font);
 
   return !fontsLoaded ? null : (
     <SafeAreaProvider>
-      <StartScreen />
+      <PasswordScreen />
     </SafeAreaProvider>
   );
 }

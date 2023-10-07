@@ -7,11 +7,10 @@ import GradientText from '../../components/GradientText';
 import { useFonts } from 'expo-font';
 import Font from '../../components/Font';
 
-
-
-const LoginScreen: React.FC = () => {
+const PasswordScreen: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPass, setConfirmPass] = useState('');
   const [isEnabled, setIsEnabled] = useState(false);
   const [isLogIn, setIsLogIn] = useState(true);
 
@@ -31,41 +30,25 @@ const LoginScreen: React.FC = () => {
 
       <TextInput
         style={styles.input}
-        placeholder="Email"
-        placeholderTextColor="#fff"
-        onChangeText={(text) => setEmail(text)}
-        value={email}
-      />
-      <TextInput
-        style={styles.input}
         placeholder="Password"
         placeholderTextColor="#fff"
         onChangeText={(text) => setPassword(text)}
         value={password}
         secureTextEntry={!isEnabled}
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Repeat Password"
+        placeholderTextColor="#fff"
+        onChangeText={(text) => setConfirmPass(text)}
+        value={confirmPass}
+        secureTextEntry={!isEnabled}
+      />
 
-      <TouchableOpacity>
-        <Text style={styles.forgotPassword}>Forgot Password?</Text>
-      </TouchableOpacity>
-
-      <View style={styles.lineContainer}>
-        <View style={styles.line}></View>
-        <Text style={styles.orText}>or</Text>
-        <View style={styles.line}></View>
-      </View>
-
-      <TouchableOpacity style={styles.googleButton}>
-        <Text style={styles.googleButtonText}>Login with Google</Text>
-        <Image 
-          source={require('../../assets/img/google.png')}
-          style={{ width: 21, height: 21 }}
-        />
-      </TouchableOpacity>
 
       <TouchableOpacity style={styles.loginButton}>
         <GradientText colors={['#9BD683', '#FBEC67']} style={styles.loginButtonText}>
-          Log In
+          
         </GradientText>
       </TouchableOpacity>
     </View>
@@ -81,7 +64,7 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     textAlign: 'center',
-    fontFamily: Font["Gilroy-Regular"],
+    fontFamily: Font['Gilroy-Regular'],
     fontSize: 30,
     fontWeight: '400',
     lineHeight: 33.5,
@@ -97,7 +80,7 @@ const styles = StyleSheet.create({
     borderColor: '#3A3839',
     borderStyle: 'solid',
     borderRadius: 11,
-    fontFamily: Font["Gilroy-Medium"],
+    fontFamily: Font['Gilroy-Medium'],
     color: '#fff'
   },
   switch: {
@@ -105,20 +88,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: 50,
     marginBottom: 20,
-    fontFamily: Font["Gilroy-Medium"],
-  },
-  forgotPassword: {
-    color: '#5C5C5D',
-    fontSize: 12,
-    textDecorationLine: 'underline',
-    display: 'flex',
-    marginLeft: -150,
-    fontFamily: Font["Gilroy-Regular"],
   },
   lineContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 30,
+    marginVertical: 15,
     width: '90%',
   },
   line: {
@@ -130,7 +104,7 @@ const styles = StyleSheet.create({
     color: '#3A3839',
     fontSize: 12,
     marginHorizontal: 10,
-    fontFamily: Font["Gilroy-Medium"],
+    fontFamily: Font['Gilroy-Medium'],
   },
   googleButton: {
     display: 'flex',
@@ -148,7 +122,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 15,
     margin: 12,
-    fontFamily: Font["Gilroy-Medium"],
+    fontFamily: Font['Gilroy-Medium'],
   },
   loginButton: {
     width: '90%',
@@ -166,8 +140,8 @@ const styles = StyleSheet.create({
     opacity: 0,
     fontWeight: 400,
     lineHeight: 20.5,
-    fontFamily: Font["Gilroy-Medium"],
+    fontFamily: Font['Gilroy-Medium'],
   },
 });
 
-export default LoginScreen;
+export default PasswordScreen;
