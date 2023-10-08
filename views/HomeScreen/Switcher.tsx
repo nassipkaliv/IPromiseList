@@ -36,7 +36,7 @@ const Switcher: React.FC<SwitcherProps> = ({ value, onChange }) => {
         ]}
         onPress={handleLogInPress}
       >
-        <Text style={{ color: activeButton ? '#fff' : '#fff' }}>My Promises</Text>
+        <Text style={[styles.btnText, { color: activeButton ? '#fff' : '#fff' }]}>My Promises</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[
@@ -48,7 +48,7 @@ const Switcher: React.FC<SwitcherProps> = ({ value, onChange }) => {
         ]}
         onPress={handleSignUpPress}
       >
-        <Text style={{ color: !activeButton ? '#fff' : '#fff' }}>Plugins</Text>
+      <Text style={[styles.btnText, { color: activeButton ? '#fff' : '#fff' }]}>Plugins</Text>
       </TouchableOpacity>
     </View>
   );
@@ -78,8 +78,11 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 13,
     borderRadius: 28,
-    fontFamily: Font["Gilroy-Medium"],
   },
+  btnText: {
+    fontSize: 14,
+    fontFamily: Font["Gilroy-Medium"],
+  }
 });
 
 export default Switcher;
