@@ -25,10 +25,12 @@ function NavigationBar() {
           inactiveTintColor: "grey",
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           tabBarStyle: {
-              backgroundColor: "#121014",
-              width: '100%',
-              borderTopLeftRadius: 50, // Adjust as needed for the desired circular appearance
-              borderTopRightRadius: 50, // Adjust as needed for the desired circular appearance
+            backgroundColor: 'transparent',
+            borderTopWidth: 0,
+            position: 'absolute',
+            bottom: 0,
+
+            fontFamily: Font["Gilroy-Regular"],
           },
           headerShown: false,
 

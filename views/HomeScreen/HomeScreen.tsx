@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Switch, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { LinearGradient } from "expo-linear-gradient";
-import CustomSwitch from '../../components/CustomSwitch';
-import LinearTextGradient from "expo-linear-gradient";
-import GradientText from '../../components/GradientText';
-import { useFonts } from 'expo-font';
-import Font from '../../components/Font';
-import { RootStackParamList } from '../../components/types/types';
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-
-
+import React from 'react';
+import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native';
 
 const HomeScreen = ({}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Home Screen</Text>
+      <ImageBackground 
+         source={require("../../assets/img/bg2.png")}
+         style={styles.backgroundImage}
+      />
+      <Image
+        source={require('../../assets/img/avatar.png')} 
+        style={styles.profileImage}
+      />
+      <View style={styles.textContainer}>
+        <Text style={styles.greetingText}>Hey, Kira!</Text>
+        <Text style={styles.dateText}>Thursday, September 21th</Text>
+      </View>
     </View>
   );
 };
@@ -22,18 +23,32 @@ const HomeScreen = ({}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#121014',
   },
-  title: {
-    color: '#fff',
-    textAlign: 'center',
-    fontFamily: Font['Gilroy-Regular'],
-    fontSize: 30,
-    fontWeight: '400',
-    lineHeight: 33.5,
-    marginBottom: 42,
-    marginTop: 95,
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+  },
+  profileImage: {
+    width: 150,
+    height: 150,
+    borderRadius: 75,
+    position: 'absolute',
+    top: 20,
+    left: 20,
+  },
+  textContainer: {
+    position: 'absolute',
+    top: 20,
+    left: 200, // Adjust the left position as needed
+  },
+  greetingText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: 'white', // Change the color as needed
+  },
+  dateText: {
+    fontSize: 16,
+    color: 'white', // Change the color as needed
   },
 });
 

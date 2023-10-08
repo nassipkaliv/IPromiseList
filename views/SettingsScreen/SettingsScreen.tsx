@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Switch, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TextInput, Button, Switch, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { LinearGradient } from "expo-linear-gradient";
 import CustomSwitch from '../../components/CustomSwitch';
 import LinearTextGradient from "expo-linear-gradient";
@@ -14,7 +14,11 @@ import { NativeStackScreenProps } from "@react-navigation/native-stack";
 const SettingsScreen = ({}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Settings Screen</Text>
+      <ImageBackground 
+         source={require("../../assets/img/bg2.png")}
+         style={styles.backgroundImage}
+      />
+      <Text>Settings Screen</Text>
     </View>
   );
 };
@@ -22,18 +26,11 @@ const SettingsScreen = ({}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#121014',
+    justifyContent: 'center',
   },
-  title: {
-    color: '#fff',
-    textAlign: 'center',
-    fontFamily: Font['Gilroy-Regular'],
-    fontSize: 30,
-    fontWeight: '400',
-    lineHeight: 33.5,
-    marginBottom: 42,
-    marginTop: 95,
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
   },
 });
 
