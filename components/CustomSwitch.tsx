@@ -1,11 +1,10 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native'; // Import useNavigation hook
-import Font from './Font';
 
 interface CustomSwitchProps {
   value: boolean;
-  onChange: () => void;
+  onChange: (newValue: boolean) => void; // Pass the newValue to the parent component
 }
 
 const CustomSwitch: React.FC<CustomSwitchProps> = ({ value, onChange }) => {
@@ -14,11 +13,15 @@ const CustomSwitch: React.FC<CustomSwitchProps> = ({ value, onChange }) => {
   const handleLogInPress = () => {
     // Navigate to the Login screen
     navigation.navigate('Login');
+    // Call the onChange function with the new value
+    onChange(true);
   };
 
   const handleSignUpPress = () => {
     // Navigate to the Register screen
     navigation.navigate('Register');
+    // Call the onChange function with the new value
+    onChange(false);
   };
 
   return (
@@ -28,7 +31,7 @@ const CustomSwitch: React.FC<CustomSwitchProps> = ({ value, onChange }) => {
           styles.buttonContainer,
           {
             backgroundColor: !value ? '#FFF' : '#121014',
-            borderWidth: value ? 0 : 0, 
+            borderWidth: value ? 0 : 0,
           },
         ]}
         onPress={handleLogInPress} // Call handleLogInPress on Log In button press
@@ -40,7 +43,7 @@ const CustomSwitch: React.FC<CustomSwitchProps> = ({ value, onChange }) => {
           styles.buttonContainer,
           {
             backgroundColor: value ? '#FFF' : '#121014',
-            borderWidth: !value ? 0 : 0, 
+            borderWidth: !value ? 0 : 0,
           },
         ]}
         onPress={handleSignUpPress} // Call handleSignUpPress on Sign Up button press
@@ -71,7 +74,6 @@ const styles = StyleSheet.create({
     height: 40,
     margin: 13,
     borderRadius: 28,
-    fontFamily: Font["Gilroy-Medium"],
   },
 });
 
