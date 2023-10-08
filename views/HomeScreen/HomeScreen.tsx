@@ -3,6 +3,7 @@ import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native';
 import ProfileDetails from '../../components/ProfileDetails';
 import Switcher from './Switcher';
 import MyPromise from './MyPromises/MyPromises';
+import DaySwitcher from './MyPromises/Day/DaySwitcher';
 
 const HomeScreen = ({}) => {
   const [activeButton, setActiveButton] = useState(false); // Initialize the active button state here
@@ -22,6 +23,7 @@ const HomeScreen = ({}) => {
 
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
       <MyPromise value={activeButton} onChange={handleSwitcherChange} />
+      <DaySwitcher value={activeButton} onChange={handleSwitcherChange} />
     </View>
   );
 };

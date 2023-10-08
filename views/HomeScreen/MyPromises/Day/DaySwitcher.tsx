@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Font from '../../../components/Font';
+import Font from '../../../../components/Font';
 
-interface SwitcherProps {
+interface DaySwitcherProps {
   value: boolean;
   onChange: () => void;
 }
 
-const MyPromise: React.FC<SwitcherProps> = ({ value, onChange }) => {
+const DaySwitcher: React.FC<DaySwitcherProps> = ({ value, onChange }) => {
   const navigation = useNavigation();
-  const [activeButton, setActiveButton] = useState<string>('Day');
+  const [activeButton, setActiveButton] = useState<string>('TODAY');
 
   const buttons = [
-    { label: 'Day', image: require('../../../assets/img/circle.png') },
-    { label: 'Week', image: require('../../../assets/img/circle.png') },
-    { label: 'Month', image: require('../../../assets/img/circle.png') },
+    { label: 'YESTERDAY' },
+    { label: 'TODAY'},
+    { label: 'TOMORROW'},
   ];
 
   const handleButtonPress = (label: string) => {
@@ -31,17 +31,16 @@ const MyPromise: React.FC<SwitcherProps> = ({ value, onChange }) => {
             style={[
               styles.button,
               {
-                borderWidth: activeButton === button.label ? 0 : 0, // Change to 1 when active
+                borderWidth: activeButton === button.label ? 0 : 0,
               },
             ]}
             onPress={() => handleButtonPress(button.label)}
           >
-            <Text style={[styles.btnText, { color: activeButton === button.label ? '#fff' : '#fff' }]}>
+            <Text style={[styles.btnText, { color: activeButton === button.label ? '#fff' : '#5B5A5B' }]}>
               {button.label}
             </Text>
           </TouchableOpacity>
           {activeButton === button.label && <View style={styles.line} />}
-          {activeButton === button.label && <Image source={button.image} style={styles.circle} />}
         </View>
       ))}
     </View>
@@ -58,7 +57,7 @@ const styles = StyleSheet.create({
     marginBottom: 77,
     backgroundColor: 'transparent',
     position: 'absolute',
-    marginTop: 230,
+    marginTop: 300,
   },
   buttonContainer: {
     flexDirection: 'column',
@@ -74,7 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 28,
   },
   btnText: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: Font['Gilroy-Medium'],
   },
   line: {
@@ -82,11 +81,6 @@ const styles = StyleSheet.create({
     height: 1,
     backgroundColor: '#2FC594',
   },
-  circle: {
-    height: 11,
-    width: 11,
-    marginTop: 3,
-  },
 });
 
-export default MyPromise;
+export default DaySwitcher;

@@ -16,6 +16,7 @@ export type RootStackParamList = {
   Home: undefined;
   Notifications: undefined;
   Settings: undefined;
+  MyPromiseToday: undefined;
   
 };
 
