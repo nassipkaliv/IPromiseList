@@ -4,7 +4,8 @@ import Font from '../../components/Font';
 import { RootStackParamList } from '../../components/types/types';
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import ProfileDetails from '../../components/ProfileDetails';
-
+import Notifications from './Notifications';
+import DaySwitcher from '../HomeScreen/MyPromises/Day/DaySwitcher';
 
 const NotificationScreen = ({}) => {
   return (
@@ -14,6 +15,7 @@ const NotificationScreen = ({}) => {
          style={styles.backgroundImage}
       />
       <ProfileDetails />
+      <Notifications />
     </View>
   );
 };
@@ -21,7 +23,6 @@ const NotificationScreen = ({}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
   },
   backgroundImage: {
     flex: 1,
