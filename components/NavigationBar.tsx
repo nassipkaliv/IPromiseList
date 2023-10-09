@@ -7,12 +7,12 @@ import { createStackNavigator } from "@react-navigation/stack";
 // Screens
 import HomeScreen from "../views/HomeScreen/HomeScreen";
 import NotificationScreen from "../views/NotificationScreen/NotificationScreen";
-import SettingsScreen from "../views/SettingsScreen/SettingsScreen";
+import ProfileScreen from "../views/ProfileScreen/ProfileScreen";
 import Font from "./Font";
 
 const homeName = "Home";
 const notificationName = "Notifications";
-const settingsName = "Settings";
+const profileName = "Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -42,7 +42,7 @@ function NavigationBar() {
               iconName = focused ? "home" : "home-outline";
             } else if (rn === notificationName) {
               iconName = focused ? "qr-code" : "md-qr-code-outline";
-            } else if (rn === settingsName) {
+            } else if (rn === profileName) {
               iconName = focused
                 ? "ios-person-circle"
                 : "ios-person-circle-outline";
@@ -55,7 +55,7 @@ function NavigationBar() {
       >
         <Tab.Screen name={homeName} component={HomeScreen} />
         <Tab.Screen name={notificationName} component={NotificationScreen} />
-        <Tab.Screen name={settingsName} component={SettingsScreen} />
+        <Tab.Screen name={profileName} component={ProfileScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

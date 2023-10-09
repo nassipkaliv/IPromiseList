@@ -17,7 +17,8 @@ export type RootStackParamList = {
   Notifications: undefined;
   Settings: undefined;
   MyPromiseToday: undefined;
-  
+  Profile: undefined;
+  ProfileDetails: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

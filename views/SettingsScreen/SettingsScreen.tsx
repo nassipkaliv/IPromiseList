@@ -18,7 +18,6 @@ const SettingsScreen = ({}) => {
          source={require("../../assets/img/bg2.png")}
          style={styles.backgroundImage}
       />
-      <Text>Settings Screen</Text>
     </View>
   );
 };

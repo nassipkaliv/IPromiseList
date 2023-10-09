@@ -5,10 +5,10 @@ import Switcher from './Switcher';
 import MyPromise from './MyPromises/MyPromises';
 import DaySwitcher from './MyPromises/Day/DaySwitcher';
 
-const HomeScreen = ({}) => {
-  const [activeButton, setActiveButton] = useState(false); // Initialize the active button state here
 
-  // Define the onChange function to update the active button state
+const HomeScreen: React.FC = ({ }) => {
+  const [activeButton, setActiveButton] = useState(false); 
+
   const handleSwitcherChange = () => {
     setActiveButton(!activeButton);
   };

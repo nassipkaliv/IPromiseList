@@ -7,14 +7,14 @@ import ProfileDetails from '../../components/ProfileDetails';
 import Notifications from './Notifications';
 import DaySwitcher from '../HomeScreen/MyPromises/Day/DaySwitcher';
 
-const NotificationScreen = ({}) => {
+const NotificationScreen: React.FC = ({ }) => {
   return (
     <View style={styles.container}>
       <ImageBackground 
          source={require("../../assets/img/bg2.png")}
          style={styles.backgroundImage}
       />
-      <ProfileDetails />
+      <ProfileDetails  />
       <Notifications />
     </View>
   );
