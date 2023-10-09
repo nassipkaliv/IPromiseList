@@ -2,13 +2,24 @@ import React, { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet, View, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Font from '../../../components/Font';
+import DaySwitcher from './Day/DaySwitcher';
+import MyPromiseToday from './Day/MyPromisesToday';
 
-interface SwitcherProps {
+interface MyPromiseProps {
   value: boolean;
   onChange: () => void;
 }
 
-const MyPromise: React.FC<SwitcherProps> = ({ value, onChange }) => {
+
+
+const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
+
+  const [activeButtonDay, setActiveButtonDay] = useState(false); 
+
+  const handleSwitcherChange = () => {
+    setActiveButtonDay(!activeButtonDay);
+  };
+  
   const navigation = useNavigation();
   const [activeButton, setActiveButton] = useState<string>('Day');
 
@@ -44,6 +55,9 @@ const MyPromise: React.FC<SwitcherProps> = ({ value, onChange }) => {
           {activeButton === button.label && <Image source={button.image} style={styles.circle} />}
         </View>
       ))}
+
+      <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
+      <MyPromiseToday />
     </View>
   );
 };
@@ -64,6 +78,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: 120,
   },
   button: {
     fontSize: 20,

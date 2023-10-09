@@ -54,15 +54,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     overflow: 'hidden',
-    marginBottom: 77,
     backgroundColor: 'transparent',
     position: 'absolute',
-    marginTop: 300,
   },
   buttonContainer: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   button: {
     fontSize: 20,

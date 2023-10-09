@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native';
-import ProfileDetails from '../../../../components/ProfileDetails';
-import Switcher from '../../Switcher';
-import MyPromise from '../MyPromises';
-import DaySwitcher from './DaySwitcher';
+import Font from '../../../../components/Font';
 
 const MyPromiseToday = ({}) => {
   const [activeButton, setActiveButton] = useState(false); // Initialize the active button state here
@@ -15,28 +12,44 @@ const MyPromiseToday = ({}) => {
 
   return (
     <View style={styles.container}>
-       <ImageBackground 
-         source={require("../../assets/img/bg2.png")}
-         style={styles.backgroundImage}
-      />
-      <ProfileDetails />
-
-      <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      <MyPromise value={activeButton} onChange={handleSwitcherChange} />
-      <DaySwitcher value={activeButton} onChange={handleSwitcherChange} />
+      <View style={styles.tasks}>
+        <View style={styles.tasksHeader}>
+          <Text style={styles.date}>24.08.2022</Text>
+          {/* <Image 
+            source={require("/assets/img/plus.png")}
+            style={styles.plus}
+          /> */}
+        </View>
+      </View>
+      
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    
+    position: 'absolute',
+    alignItems: 'center',
   },
-  backgroundImage: {
-    flex: 1,
-    resizeMode: 'cover',
+  tasks: {
+    marginHorizontal: 20,
+    width: '100%',
   },
+  tasksHeader: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  date: {
+    color: '#5a5a5a',
+    fontFamily: Font["Gilroy-Regular"],
+    fontSize: 12,
+    lineHeight: 33.5,
+  },
+  plus: {
+    width: 15,
+    height: 15,
+  }
 });
 
 export default MyPromiseToday;

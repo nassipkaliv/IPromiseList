@@ -4,7 +4,7 @@ import ProfileDetails from '../../components/ProfileDetails';
 import Switcher from './Switcher';
 import MyPromise from './MyPromises/MyPromises';
 import DaySwitcher from './MyPromises/Day/DaySwitcher';
-
+import InstalledPlugin from './Plugins/InstalledPlugin';
 
 const HomeScreen: React.FC = ({ }) => {
   const [activeButton, setActiveButton] = useState(false); 
@@ -15,15 +15,15 @@ const HomeScreen: React.FC = ({ }) => {
 
   return (
     <View style={styles.container}>
-       <ImageBackground 
+       {/* <ImageBackground 
          source={require("../../assets/img/bg2.png")}
          style={styles.backgroundImage}
       />
       <ProfileDetails />
 
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      <MyPromise value={activeButton} onChange={handleSwitcherChange} />
-      <DaySwitcher value={activeButton} onChange={handleSwitcherChange} />
+      <MyPromise value={activeButton} onChange={handleSwitcherChange} /> */}
+      <InstalledPlugin />
     </View>
   );
 };
