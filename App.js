@@ -8,7 +8,11 @@ import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import PasswordScreen from './views/AuthScreen/PasswordScreen';
 import Navigation from './components/AuthNavigator';
+import NewPromise from './views/HomeScreen/MyPromises/NewPromise/NewPromise';
 import NewPromiseDay from './views/HomeScreen/MyPromises/NewPromise/NewPromiseDay';
+import NewPromiseWeek from './views/HomeScreen/MyPromises/NewPromise/NewPromiseWeek';
+import NewPromiseMonth from './views/HomeScreen/MyPromises/NewPromise/NewPromiseMonth';
+import EditPromise from './views/HomeScreen/MyPromises/NewPromise/EditPromise';
 
 
 export default function App() {
@@ -16,7 +20,7 @@ export default function App() {
 
   return !fontsLoaded ? null : (
     <SafeAreaProvider>
-      <NewPromiseDay />
+      <Navigation />
     </SafeAreaProvider>
   );
 }

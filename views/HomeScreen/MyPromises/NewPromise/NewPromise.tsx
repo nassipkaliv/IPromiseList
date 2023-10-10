@@ -5,7 +5,7 @@ import ScrollPicker from "react-native-wheel-scrollview-picker";
 
 
 
-const EditPromise: React.FC = ({}) => {
+const NewPromise: React.FC = ({}) => {
 
   const [isDone, setIsDone] = useState(false);
   const [isRepeat, setIsRepeat] = useState(false);
@@ -35,7 +35,7 @@ const EditPromise: React.FC = ({}) => {
           </View>
         </View>
         <View style={styles.promiseContainer}>
-          <Text style={styles.title}>Edit Promise</Text>
+          <Text style={styles.title}>New Promise</Text>
             <View style={styles.textInputs}>
               <Text style={styles.inputLabel}>Title</Text>
                 <TextInput
@@ -277,4 +277,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditPromise;
+export default NewPromise;

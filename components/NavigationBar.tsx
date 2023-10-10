@@ -29,7 +29,6 @@ function NavigationBar() {
             borderTopWidth: 0,
             position: 'absolute',
             bottom: 0,
-
             fontFamily: Font["Gilroy-Regular"],
           },
           headerShown: false,
