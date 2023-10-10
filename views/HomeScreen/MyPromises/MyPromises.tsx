@@ -58,6 +58,8 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
 
       <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
       <MyPromiseToday />
+
+      
     </View>
   );
 };

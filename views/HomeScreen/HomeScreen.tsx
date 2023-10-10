@@ -15,14 +15,7 @@ const HomeScreen: React.FC = ({ }) => {
 
   return (
     <View style={styles.container}>
-       {/* <ImageBackground 
-         source={require("../../assets/img/bg2.png")}
-         style={styles.backgroundImage}
-      />
-      <ProfileDetails />
-
-      <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      <MyPromise value={activeButton} onChange={handleSwitcherChange} /> */}
+       
       <InstalledPlugin />
     </View>
   );

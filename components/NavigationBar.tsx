@@ -25,7 +25,7 @@ function NavigationBar() {
           inactiveTintColor: "grey",
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           tabBarStyle: {
-            backgroundColor: 'transparent',
+            backgroundColor: '#121014',
             borderTopWidth: 0,
             position: 'absolute',
             bottom: 0,
