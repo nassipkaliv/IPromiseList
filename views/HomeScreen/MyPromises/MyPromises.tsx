@@ -57,7 +57,7 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
       ))}
 
       <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
-      {/* <MyPromiseToday /> */}
+      <MyPromiseToday />
       <View style={styles.newPromise}>
         <TouchableOpacity style={styles.promiseBtn}>
           <Image style={styles.plusImg} source={require("../../../assets/img/newPromise.png")}/>

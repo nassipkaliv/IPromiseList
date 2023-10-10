@@ -22,7 +22,7 @@ const HomeScreen: React.FC = ({ }) => {
       />
       <ProfileDetails />
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      <MyPromise value={activeButton} onChange={handleSwitcherChange} />
+      {/* <MyPromise value={activeButton} onChange={handleSwitcherChange} /> */}
     </View>
   );
 };

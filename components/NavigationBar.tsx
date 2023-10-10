@@ -1,8 +1,7 @@
 import React from "react";
-import { NavigationContainer, StackActions } from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Ionicons } from "@expo/vector-icons";
-import { createStackNavigator } from "@react-navigation/stack";
+import { Image } from "react-native";
 
 // Screens
 import HomeScreen from "../views/HomeScreen/HomeScreen";
@@ -16,6 +15,15 @@ const profileName = "Profile";
 
 const Tab = createBottomTabNavigator();
 
+const TabIcon = ({ focused, icon }) => {
+  return (
+    <Image
+      source={focused ? icon.active : icon.inactive}
+      style={{ width: 24, height: 24 }}
+    />
+  );
+};
+
 function NavigationBar() {
   return (
     <NavigationContainer independent={true}>
@@ -23,6 +31,7 @@ function NavigationBar() {
         initialRouteName={homeName}
         screenOptions={({ route }) => ({
           inactiveTintColor: "grey",
+          tabBarActiveTintColor: '#fff',
           labelStyle: { paddingBottom: 10, fontSize: 10 },
           tabBarStyle: {
             backgroundColor: '#121014',
@@ -33,22 +42,23 @@ function NavigationBar() {
           },
           headerShown: false,
 
-          tabBarIcon: ({ focused, color, size }) => {
+          tabBarIcon: ({ focused }) => {
             let iconName;
             let rn = route.name;
+            let icon = {};
 
             if (rn === homeName) {
-              iconName = focused ? "home" : "home-outline";
+              icon.active = require('../assets/img/homeIcon.png');
+              icon.inactive = require('../assets/img/homeIcon.png');
             } else if (rn === notificationName) {
-              iconName = focused ? "qr-code" : "md-qr-code-outline";
+              icon.active = require('../assets/img/notificationIcon.png');
+              icon.inactive = require('../assets/img/notificationIcon.png');
             } else if (rn === profileName) {
-              iconName = focused
-                ? "ios-person-circle"
-                : "ios-person-circle-outline";
+              icon.active = require('../assets/img/profileIcon.png');
+              icon.inactive = require('../assets/img/profileIcon.png');
             }
 
-            // Icon
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <TabIcon focused={focused} icon={icon} />;
           },
         })}
       >
