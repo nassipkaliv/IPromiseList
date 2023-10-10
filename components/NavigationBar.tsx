@@ -32,10 +32,17 @@ function NavigationBar() {
         screenOptions={({ route }) => ({
           inactiveTintColor: "grey",
           tabBarActiveTintColor: '#fff',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
+          tabBarItemStyle: {
+            paddingBottom: 0,
+            marginVertical: 15,
+          },
+          tabBarLabelStyle: { fontSize: 12, paddingTop: 0, paddingBottom: 20,},
           tabBarStyle: {
+            paddingVertical: 0,
+            height: 140,
+            borderTopLeftRadius: 774,
+            borderTopRightRadius: 774,
             backgroundColor: '#121014',
-            borderTopWidth: 0,
             position: 'absolute',
             bottom: 0,
             fontFamily: Font["Gilroy-Regular"],
