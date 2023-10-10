@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: '100%',
     overflow: 'hidden',
-    backgroundColor: 'transparent',
     position: 'absolute',
   },
   buttonContainer: {

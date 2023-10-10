@@ -57,10 +57,16 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
       ))}
 
       <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
-      <MyPromiseToday />
-
-      
+      {/* <MyPromiseToday /> */}
+      <View style={styles.newPromise}>
+        <TouchableOpacity style={styles.promiseBtn}>
+          <Image style={styles.plusImg} source={require("../../../assets/img/newPromise.png")}/>
+          <Text style={styles.promiseText}>new promise</Text>
+        </TouchableOpacity>
+      </View>
     </View>
+
+    
   );
 };
 
@@ -70,11 +76,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    overflow: 'hidden',
-    marginBottom: 77,
-    backgroundColor: 'transparent',
+    paddingBottom: 25,
     position: 'absolute',
     marginTop: 230,
+    zIndex: 1,
   },
   buttonContainer: {
     flexDirection: 'column',
@@ -103,6 +108,29 @@ const styles = StyleSheet.create({
     height: 11,
     width: 11,
     marginTop: 3,
+  },
+  newPromise: {
+    alignItems: 'center',
+    position: 'absolute',
+    paddingTop: 600,
+  },
+  promiseBtn: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+  },
+  plusImg: {
+    marginVertical: 2,
+    width: 15,
+    height: 15,
+    backgroundColor: 'transparent',
+    marginRight: 12,
+  },
+  promiseText: {
+    color: '#fff',
+    fontSize: 14,
+    fontFamily: Font["Gilroy-Regular"],
+    lineHeight: 18.5,
   },
 });
 
