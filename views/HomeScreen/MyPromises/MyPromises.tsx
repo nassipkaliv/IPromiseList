@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { TouchableOpacity, Text, StyleSheet, View, Image } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View, Image, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Font from '../../../components/Font';
 import DaySwitcher from './Day/DaySwitcher';
@@ -35,6 +35,7 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
   };
 
   return (
+    
     <View style={styles.container}>
       {buttons.map((button) => (
         <View key={button.label} style={styles.buttonContainer}>
@@ -42,7 +43,7 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
             style={[
               styles.button,
               {
-                borderWidth: activeButton === button.label ? 0 : 0, // Change to 1 when active
+                borderWidth: activeButton === button.label ? 0 : 0, 
               },
             ]}
             onPress={() => handleButtonPress(button.label)}
@@ -55,14 +56,8 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
           {activeButton === button.label && <Image source={button.image} style={styles.circle} />}
         </View>
       ))}
-        <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
-        
-        <View style={styles.newPromise}>
-        <TouchableOpacity style={styles.promiseBtn}>
-          <Image style={styles.plusImg} source={require("../../../assets/img/newPromise.png")}/>
-          <Text style={styles.promiseText}>new promise</Text>
-        </TouchableOpacity>
-      </View>
+       
+       
     </View>
 
     
@@ -75,6 +70,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
+    paddingBottom: 25,
     position: 'absolute',
     marginTop: 230,
     zIndex: 1,
@@ -83,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 110,
+    marginBottom: 120,
   },
   button: {
     fontSize: 20,
@@ -110,29 +106,7 @@ const styles = StyleSheet.create({
     width: 11,
     marginTop: 3,
   },
-  newPromise: {
-    alignItems: 'center',
-    position: 'absolute',
-    paddingTop: 600,
-  },
-  promiseBtn: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  plusImg: {
-    marginVertical: 2,
-    width: 15,
-    height: 15,
-    backgroundColor: 'transparent',
-    marginRight: 12,
-  },
-  promiseText: {
-    color: '#fff',
-    fontSize: 14,
-    fontFamily: Font["Gilroy-Regular"],
-    lineHeight: 18.5,
-  },
+  
 });
 
 export default MyPromise;

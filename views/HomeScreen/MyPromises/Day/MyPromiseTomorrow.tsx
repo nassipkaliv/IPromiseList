@@ -1,27 +1,21 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import Font from '../../../../components/Font';
-import DaySwitcher from './DaySwitcher';
 
-const MyPromiseToday = ({}) => {
-  const [activeButtonDay, setActiveButtonDay] = useState(false); 
+const MyPromiseTomorrow = ({}) => {
+  const [activeButton, setActiveButton] = useState(false);
 
   const handleSwitcherChange = () => {
-    setActiveButtonDay(!activeButtonDay);
+    setActiveButton(!activeButton);
   };
-  
-  const [activeButton, setActiveButton] = useState<string>('Day');
-  
 
   return (
     <View style={styles.container}>
-       <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
       <View style={styles.taskContainer}>
         <View style={styles.taskHeader}>
-          <Text style={styles.date}>24.08.2023</Text>
+          <Text style={styles.date}>25.08.2023</Text>
           <Image style={styles.plusImg} source={require("../../../../assets/img/plus.png")} />
         </View>
-        
         
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
@@ -59,6 +53,28 @@ const MyPromiseToday = ({}) => {
             </View>
           </View>
         </View>
+
+      {/* Third Input */}
+      <View style={styles.inputContainer}>
+          <View style={styles.input}>
+            <Image 
+              source={require("../../../../assets/img/taskCheck.png")}
+              style={styles.taskCheckImg}
+            />
+            <Image 
+              source={require("../../../../assets/img/taskReset.png")}
+              style={styles.taskResetImg}
+            />
+            <Text style={styles.taskText}>Some  recurrent task 1</Text>
+            <View style={styles.taskSettingsContainer}>
+              <Image 
+                source={require("../../../../assets/img/taskSettings.png")}
+                style={styles.taskSettingsImg}
+              />
+            </View>
+          </View>
+        </View>
+
       </View>
     </View>
   );
@@ -68,10 +84,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     position: 'absolute',
-    marginTop: 300,
+    marginTop: 150,
   },
   taskContainer: {
-    marginTop: 50,
+    marginTop: 200,
     alignItems: 'center',
     paddingHorizontal: 20,
   },
@@ -129,28 +145,7 @@ const styles = StyleSheet.create({
     width: 13,
     height: 14,
     marginLeft: 15,
-  },
-  newPromise: {
-    alignItems: 'center',
-  },
-  promiseBtn: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  plus: {
-    marginVertical: 2,
-    width: 15,
-    height: 15,
-    backgroundColor: 'transparent',
-    marginRight: 12,
-  },
-  promiseText: {
-    color: '#fff',
-    fontSize: 14,
-    fontFamily: Font["Gilroy-Regular"],
-    lineHeight: 18.5,
-  },
+  }
 });
 
-export default MyPromiseToday;
+export default MyPromiseTomorrow;

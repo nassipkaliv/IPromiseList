@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, Image, StyleSheet } from 'react-native';
+import { View, Text, ImageBackground, Image, StyleSheet, ScrollView } from 'react-native';
 import ProfileDetails from '../../components/ProfileDetails';
 import Switcher from './Switcher';
 import MyPromise from './MyPromises/MyPromises';
 import DaySwitcher from './MyPromises/Day/DaySwitcher';
 import InstalledPlugin from './Plugins/InstalledPlugin';
 import MyPromiseToday from './MyPromises/Day/MyPromisesToday';
+import MyPromiseTomorrow from './MyPromises/Day/MyPromiseTomorrow';
+import MyPromiseWeek from './MyPromises/Week/MyPromisesWeek';
+
 
 const HomeScreen: React.FC = ({ }) => {
   const [activeButton, setActiveButton] = useState(false); 
@@ -15,17 +18,18 @@ const HomeScreen: React.FC = ({ }) => {
   };
 
   return (
-    <View style={styles.container}>
-       
-      <ImageBackground 
+    <ImageBackground 
          source={require("../../assets/img/bg2.png")}
          style={styles.backgroundImage}
-      />
+    >
+    <ScrollView style={styles.container}>
       <ProfileDetails />
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
       <MyPromise value={activeButton} onChange={handleSwitcherChange} />
-      <MyPromiseToday />
-    </View>
+      {/* <MyPromiseToday /> */}
+      <MyPromiseWeek />
+    </ScrollView>
+    </ImageBackground>
   );
 };
 
@@ -37,6 +41,8 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     resizeMode: 'cover',
+    width: '100%',
+    height: '100%',
   },
 });
 
