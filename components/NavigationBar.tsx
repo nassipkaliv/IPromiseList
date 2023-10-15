@@ -36,9 +36,8 @@ function NavigationBar() {
             paddingBottom: 0,
             marginVertical: 15,
           },
-          tabBarLabelStyle: { fontSize: 12, paddingTop: 0, paddingBottom: 20,},
+          tabBarLabelStyle: { fontSize: 12, marginTop: 0, marginBottom: 20,},
           tabBarStyle: {
-            paddingVertical: 0,
             height: 140,
             borderTopLeftRadius: 774,
             borderTopRightRadius: 774,

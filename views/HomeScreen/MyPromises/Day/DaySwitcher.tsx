@@ -53,26 +53,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    overflow: 'hidden',
     position: 'absolute',
   },
   buttonContainer: {
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    
   },
   button: {
-    fontSize: 20,
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 15,
+    margin: 20,
     borderRadius: 28,
   },
   btnText: {
     fontSize: 12,
-    fontFamily: Font['Gilroy-Medium'],
+    fontFamily: Font['Gilroy-Regular'],
   },
   line: {
     width: '80%',

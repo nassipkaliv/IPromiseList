@@ -55,10 +55,9 @@ const MyPromise: React.FC<MyPromiseProps> = ({ value, onChange }) => {
           {activeButton === button.label && <Image source={button.image} style={styles.circle} />}
         </View>
       ))}
-
-      <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
-      <MyPromiseToday />
-      <View style={styles.newPromise}>
+        <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
+        
+        <View style={styles.newPromise}>
         <TouchableOpacity style={styles.promiseBtn}>
           <Image style={styles.plusImg} source={require("../../../assets/img/newPromise.png")}/>
           <Text style={styles.promiseText}>new promise</Text>
@@ -76,7 +75,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    paddingBottom: 25,
     position: 'absolute',
     marginTop: 230,
     zIndex: 1,
@@ -85,7 +83,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 120,
+    marginBottom: 110,
   },
   button: {
     fontSize: 20,
@@ -98,6 +96,9 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 14,
     fontFamily: Font['Gilroy-Medium'],
+  },
+  myPromiseTodayContainer: {
+    paddingVertical: 5,
   },
   line: {
     width: '80%',

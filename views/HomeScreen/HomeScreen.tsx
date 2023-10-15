@@ -5,6 +5,7 @@ import Switcher from './Switcher';
 import MyPromise from './MyPromises/MyPromises';
 import DaySwitcher from './MyPromises/Day/DaySwitcher';
 import InstalledPlugin from './Plugins/InstalledPlugin';
+import MyPromiseToday from './MyPromises/Day/MyPromisesToday';
 
 const HomeScreen: React.FC = ({ }) => {
   const [activeButton, setActiveButton] = useState(false); 
@@ -22,7 +23,8 @@ const HomeScreen: React.FC = ({ }) => {
       />
       <ProfileDetails />
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      {/* <MyPromise value={activeButton} onChange={handleSwitcherChange} /> */}
+      <MyPromise value={activeButton} onChange={handleSwitcherChange} />
+      <MyPromiseToday />
     </View>
   );
 };

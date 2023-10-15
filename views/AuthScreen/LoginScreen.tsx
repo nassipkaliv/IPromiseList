@@ -31,7 +31,7 @@ const LoginScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
       <Text style={styles.title}>I Promise list</Text>
 
       <CustomSwitch value={isLogIn} onChange={toggleSwitch}  />
-
+    
       <TextInput
         style={styles.input}
         placeholder="Email"
