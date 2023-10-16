@@ -1,21 +1,40 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Font from '../../../../components/Font';
-import DaySwitcher from '../Day/DaySwitcher';
+
 
 const MyPromiseMonth = ({}) => {
-  const [activeButtonDay, setActiveButtonDay] = useState(false); 
+  const [month, setMonth] = useState(1); 
+  const months = [
+    'January 2023', 'September 2023', 'March 2023', 'April 2023', 'May 2023', 'June 2023',
+    'July 2023', 'August 2023', 'February 2023', 'October 2023', 'November 2023', 'December 2023'
+  ];
 
-  const handleSwitcherChange = () => {
-    setActiveButtonDay(!activeButtonDay);
+  const handleMonthChange = (increment) => {
+    if (increment) {
+      setMonth((month + 1) % 12);
+    } else {
+      setMonth((month - 1 + 12) % 12);
+    }
   };
-  
-  const [activeButton, setActiveButton] = useState<string>('Day');
-  
 
   return (
     <View style={styles.container}>
-       
+      <View style={styles.slider}>
+        <TouchableOpacity onPress={() => handleMonthChange(false)} style={styles.leftArrow}>
+          <Image 
+            style={styles.leftArrowImg}
+            source={require("../../../../assets/img/leftArrow.png")}
+          />
+        </TouchableOpacity>
+        <Text style={styles.monthText}>{months[month]}</Text>
+        <TouchableOpacity onPress={() => handleMonthChange(true)} style={styles.rightArrow}>
+          <Image 
+            style={styles.rightArrowImg}
+            source={require("../../../../assets/img/rightArrow.png")}
+          />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -23,89 +42,35 @@ const MyPromiseMonth = ({}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    position: 'absolute',
-    marginTop: 300,
-  },
-  taskContainer: {
-    marginTop: 50,
+    marginTop: 250,
     alignItems: 'center',
+  },
+  slider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     paddingHorizontal: 20,
   },
-  taskHeader: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between', 
+  leftArrow: {
+    opacity: 1,
+    padding: 80, 
   },
-  date: {
-    color: '#5a5a5a',
-    fontFamily: Font["Gilroy-Regular"],
-    fontSize: 12,
-    lineHeight: 33.5,
+  rightArrow: {
+    opacity: 1,
+    padding: 80,
   },
-  plusImg: {
-    width: 15,
-    height: 13,
-    marginLeft: '75%',
-    marginTop: 10,
-  },
-  inputContainer: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#3A3839',
-    borderStyle: 'solid',
-    borderRadius: 11,
-  },
-  input: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 15,
-    borderColor: '#3A3839',
-    height: 46,
-  },
-  taskCheckImg: {
-    width: 17,
-    height: 17,
-  },
-  taskText: {
-    color: '#fff',
-    fontFamily: Font["Gilroy-Regular"],
-    fontSize: 14,
-    lineHeight: 33.5,
-    marginLeft: 20,
-    paddingTop: 3,
-  },
-  taskSettingsContainer: {
-    marginLeft: 'auto',
-  },
-  taskSettingsImg: {
-    width: 2,
+  leftArrowImg: {
+    width: 8,
     height: 14,
   },
-  taskResetImg: {
-    width: 13,
+  rightArrowImg: {
+    width: 8,
     height: 14,
-    marginLeft: 15,
   },
-  newPromise: {
-    alignItems: 'center',
-  },
-  promiseBtn: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  plus: {
-    marginVertical: 2,
-    width: 15,
-    height: 15,
-    backgroundColor: 'transparent',
-    marginRight: 12,
-  },
-  promiseText: {
+  monthText: {
+    fontFamily: Font["Gilroy-Medium"],
+    fontSize: 18,
     color: '#fff',
-    fontSize: 14,
-    fontFamily: Font["Gilroy-Regular"],
-    lineHeight: 18.5,
   },
 });
 

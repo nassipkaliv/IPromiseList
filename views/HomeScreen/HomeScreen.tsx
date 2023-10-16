@@ -8,6 +8,7 @@ import InstalledPlugin from './Plugins/InstalledPlugin';
 import MyPromiseToday from './MyPromises/Day/MyPromisesToday';
 import MyPromiseTomorrow from './MyPromises/Day/MyPromiseTomorrow';
 import MyPromiseWeek from './MyPromises/Week/MyPromisesWeek';
+import MyPromiseMonth from './MyPromises/Month/MyPromisesMonth';
 
 
 const HomeScreen: React.FC = ({ }) => {
@@ -27,7 +28,8 @@ const HomeScreen: React.FC = ({ }) => {
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
       <MyPromise value={activeButton} onChange={handleSwitcherChange} />
       {/* <MyPromiseToday /> */}
-      <MyPromiseWeek />
+      {/* <MyPromiseWeek /> */}
+      <MyPromiseMonth />
     </ScrollView>
     </ImageBackground>
   );
