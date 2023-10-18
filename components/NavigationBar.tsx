@@ -38,26 +38,27 @@ function NavigationBar() {
           },
           tabBarLabelStyle: { fontSize: 12, marginTop: 0, marginBottom: 20,},
           tabBarStyle: {
-            height: 140,
+            height: 160,
             borderTopLeftRadius: 774,
             borderTopRightRadius: 774,
             backgroundColor: '#121014',
             position: 'absolute',
-            bottom: 0,
             fontFamily: Font["Gilroy-Regular"],
+          },
+          tabBarIconStyle: {
+            marginBottom: -20,
           },
           headerShown: false,
 
           tabBarIcon: ({ focused }) => {
-            let iconName;
             let rn = route.name;
             let icon = {};
 
             if (rn === homeName) {
-              icon.active = require('../assets/img/homeIcon.png');
+              icon.active = require('../assets/img/homeIconActive.png');
               icon.inactive = require('../assets/img/homeIcon.png');
             } else if (rn === notificationName) {
-              icon.active = require('../assets/img/notificationIcon.png');
+              icon.active = require('../assets/img/notificationIconActive.png');
               icon.inactive = require('../assets/img/notificationIcon.png');
             } else if (rn === profileName) {
               icon.active = require('../assets/img/profileIcon.png');
