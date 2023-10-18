@@ -1,10 +1,10 @@
-import React, { useState } from 'react';import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import ProfileDetails from '../../../../components/ProfileDetails';
 import Font from '../../../../components/Font';
 import SearchContainer from '../SearchContainer';
 
 const CategoriesInstalled: React.FC = ({ }) => {
-
   const [installedActive, setInstalledActive] = useState(true);
   const [availableActive, setAvailableActive] = useState(false);
   const [customActive, setCustomActive] = useState(false);
@@ -30,7 +30,7 @@ const CategoriesInstalled: React.FC = ({ }) => {
               setAvailableActive(false);
               setCustomActive(false);
             }}
-            >
+          >
             <Text style={styles.buttonText}>Installed</Text>
           </TouchableOpacity>
 
@@ -44,7 +44,7 @@ const CategoriesInstalled: React.FC = ({ }) => {
               setAvailableActive(true);
               setCustomActive(false);
             }}
-            >
+          >
             <Text style={styles.buttonText}>Available</Text>
           </TouchableOpacity>
 
@@ -58,25 +58,32 @@ const CategoriesInstalled: React.FC = ({ }) => {
               setAvailableActive(false);
               setCustomActive(true);
             }}
-            >
+          >
             <Text style={styles.buttonText}>Custom</Text>
           </TouchableOpacity>
         </View>
 
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Text style={styles.checkEnabled}>Goal achivement basic</Text>
-            <Text style={styles.checkDisabled}>Enabled</Text>
+            <Text style={styles.checkEnabled}>
+              {availableActive ? 'Be happier' : 'Goal achivement basic'}
+            </Text>
+            <Text style={availableActive ? styles.installedText : styles.checkDisabled}>
+              {availableActive ? 'Install' : 'Enabled'}
+            </Text>
           </View>
         </View>
 
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Text style={styles.checkEnabled}>Goal achivement advanced</Text>
-            <Text style={styles.checkDisabledTrue}>Disabled</Text>
+            <Text style={styles.checkEnabled}>
+              {availableActive ? 'Boost motivation basic' : 'Goal achivement advanced'}
+            </Text>
+            <Text style={availableActive ? styles.installedText : styles.checkDisabledTrue}>
+              {availableActive ? 'Install' : 'Disabled'}
+            </Text>
           </View>
         </View>
-
       </View>
     </View>
   );
@@ -107,7 +114,7 @@ const styles = StyleSheet.create({
   },
   categoryContainer: {
     paddingHorizontal: 20,
-    marginTop: 330, 
+    marginTop: 330,
     position: 'absolute',
   },
   categoryRow: {
@@ -119,15 +126,6 @@ const styles = StyleSheet.create({
   button: {
     height: 35,
     width: 115,
-    borderRadius: 28,
-    backgroundColor: '#9977DC',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginRight: 5,
-  },
-  buttonLong: {
-    height: 35,
-    width: 235,
     borderRadius: 28,
     backgroundColor: '#9977DC',
     alignItems: 'center',
@@ -158,18 +156,24 @@ const styles = StyleSheet.create({
   },
   checkEnabled: {
     color: '#fff',
-    fontFamily: Font["Gilroy-Regular"],
+    fontFamily: Font['Gilroy-Regular'],
     fontSize: 14,
   },
   checkDisabled: {
     color: '#2fc594',
-    fontFamily: Font["Gilroy-Medium"],
+    fontFamily: Font['Gilroy-Medium'],
     fontSize: 14,
     textAlign: 'right',
   },
   checkDisabledTrue: {
     color: '#5a5a5a',
-    fontFamily: Font["Gilroy-Medium"],
+    fontFamily: Font['Gilroy-Medium'],
+    fontSize: 14,
+    textAlign: 'right',
+  },
+  installedText: {
+    color: '#9977DC',
+    fontFamily: Font['Gilroy-Medium'],
     fontSize: 14,
     textAlign: 'right',
   },
