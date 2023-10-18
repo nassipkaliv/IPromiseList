@@ -9,7 +9,7 @@ import MyPromiseToday from './MyPromises/Day/MyPromisesToday';
 import MyPromiseTomorrow from './MyPromises/Day/MyPromiseTomorrow';
 import MyPromiseWeek from './MyPromises/Week/MyPromisesWeek';
 import MyPromiseMonth from './MyPromises/Month/MyPromisesMonth';
-
+import CategoriesAll from './Plugins/Categories/CategoriesAll';
 
 const HomeScreen: React.FC = ({ }) => {
   const [activeButton, setActiveButton] = useState(false); 
@@ -26,10 +26,11 @@ const HomeScreen: React.FC = ({ }) => {
     <ScrollView style={styles.container}>
       <ProfileDetails />
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      <MyPromise value={activeButton} onChange={handleSwitcherChange} />
+      {/* <MyPromise value={activeButton} onChange={handleSwitcherChange} /> */}
       {/* <MyPromiseToday /> */}
       {/* <MyPromiseWeek /> */}
-      <MyPromiseMonth />
+      {/* <MyPromiseMonth /> */}
+      <CategoriesAll />
     </ScrollView>
     </ImageBackground>
   );
