@@ -13,7 +13,7 @@ import NewPromiseDay from './views/HomeScreen/MyPromises/NewPromise/NewPromiseDa
 import NewPromiseWeek from './views/HomeScreen/MyPromises/NewPromise/NewPromiseWeek';
 import NewPromiseMonth from './views/HomeScreen/MyPromises/NewPromise/NewPromiseMonth';
 import EditPromise from './views/HomeScreen/MyPromises/NewPromise/EditPromise';
-
+// Добавьте в return эти скрины чтобы увидеть их
 
 export default function App() {
   const [fontsLoaded] = useFonts(font);
