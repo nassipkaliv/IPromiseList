@@ -7,7 +7,7 @@ declare global {
 }
 
 export type RootStackParamList = {
-  Welcome: undefined;
+  Loading: undefined;
   Login: undefined;
   Register: undefined;
   Start: undefined;

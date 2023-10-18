@@ -27,12 +27,13 @@ const HomeScreen: React.FC = ({ }) => {
     <ScrollView style={styles.container}>
       <ProfileDetails />
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
-      {/* <MyPromise value={activeButton} onChange={handleSwitcherChange} />  когда надо включить что то из MyPromise*/} 
-      {/* <MyPromiseToday /> */}
+      {/* MyPromise включите, если хотите взгулянуть что то из MyPromise... */}
+      <MyPromise value={activeButton} onChange={handleSwitcherChange} />      
+      <MyPromiseToday />
       {/* <MyPromiseWeek /> */}
       {/* <MyPromiseMonth /> */}
       {/* <CategoriesAll /> */}
-      <CategoriesInstalled />
+      {/* <CategoriesInstalled /> */}
     </ScrollView>
     </ImageBackground>
   );

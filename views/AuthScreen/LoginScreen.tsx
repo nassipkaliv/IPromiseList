@@ -18,19 +18,14 @@ const LoginScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const [isLogIn, setIsLogIn] = useState(true);
 
-  const handleLogin = () => {
-    console.log(`Logging in with email: ${email} and password: ${password}`);
+  const handleSwitchChange = (newValue) => {
+    setIsLogIn(newValue);
   };
-
-  const toggleSwitch = () => {
-    setIsLogIn((prev) => !prev);
-  };
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>I Promise list</Text>
 
-      <CustomSwitch value={isLogIn} onChange={toggleSwitch}  />
+      <CustomSwitch value={isLogIn} onChange={handleSwitchChange} />
     
       <TextInput
         style={styles.input}

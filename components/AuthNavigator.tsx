@@ -7,6 +7,7 @@ import StartScreen from "../views/StartScreen/StartScreen";
 import PasswordScreen from "../views/AuthScreen/PasswordScreen";
 import { RootStackParamList } from "./types/types";
 import NavigationBar from "./NavigationBar";
+import LoadingScreen from "../views/LoadingScreen/LoadingScreen";
 
 export default function Navigation() {
   return (
@@ -25,6 +26,7 @@ function RootNavigator() {
         headerShown: false,
       }}
     >
+      <Stack.Screen name="Loading" component={LoadingScreen} />
       <Stack.Screen name="Start" component={StartScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
