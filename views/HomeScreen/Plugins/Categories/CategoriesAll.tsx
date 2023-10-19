@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   categoryContainer: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
     marginTop: 330, 
     position: 'absolute',
   },

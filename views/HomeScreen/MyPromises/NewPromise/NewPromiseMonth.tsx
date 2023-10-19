@@ -507,13 +507,13 @@ const styles = StyleSheet.create({
   calendar: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    paddingHorizontal: 20,
     marginVertical: 0,
   },
   lineSeparator: {
     height: 1,
     marginHorizontal: 30,
-    backgroundColor: '#ffffff', // Adjust the color as needed
+    backgroundColor: '#ffffff',
   },
 });
 

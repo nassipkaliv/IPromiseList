@@ -3,11 +3,19 @@ import { View, Text, Image, StyleSheet, ScrollView, TouchableOpacity } from 'rea
 import Font from '../../../../components/Font';
 
 const MyPromiseWeek = ({}) => {
-  const [activeButton, setActiveButton] = useState(false);
+  const [activeButtonDay, setActiveButtonDay] = useState(false);
 
   const handleSwitcherChange = () => {
-    setActiveButton(!activeButton);
+    setActiveButtonDay(!activeButtonDay);
   };
+
+  const toggleCheckImage = () => {
+    setActiveButtonDay(!activeButtonDay);
+  };
+
+  const taskCheckImages = activeButtonDay
+    ? require("../../../../assets/img/taskNoCheck.png")
+    : require("../../../../assets/img/taskCheck.png");
 
   return (
     <ScrollView style={styles.container}>
@@ -27,10 +35,12 @@ const MyPromiseWeek = ({}) => {
         
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Text style={styles.taskText}>Some task 3</Text>
             <View style={styles.taskSettingsContainer}>
               <Image 
@@ -44,10 +54,12 @@ const MyPromiseWeek = ({}) => {
         {/* Second Input */}
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Image 
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}
@@ -64,10 +76,12 @@ const MyPromiseWeek = ({}) => {
 
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskNoCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Image 
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}
@@ -93,10 +107,12 @@ const MyPromiseWeek = ({}) => {
         
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Text style={styles.taskText}>Some task 3</Text>
             <View style={styles.taskSettingsContainer}>
               <Image 
@@ -110,10 +126,12 @@ const MyPromiseWeek = ({}) => {
         {/* Second Input */}
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Image 
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}
@@ -130,10 +148,12 @@ const MyPromiseWeek = ({}) => {
 
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskNoCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Image 
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}
@@ -160,10 +180,12 @@ const MyPromiseWeek = ({}) => {
         
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Text style={styles.taskText}>Some task 3</Text>
             <View style={styles.taskSettingsContainer}>
               <Image 
@@ -177,10 +199,12 @@ const MyPromiseWeek = ({}) => {
         {/* Second Input */}
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Image 
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}
@@ -197,10 +221,12 @@ const MyPromiseWeek = ({}) => {
 
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskNoCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Image 
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}

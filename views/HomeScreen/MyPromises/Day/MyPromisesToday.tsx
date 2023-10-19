@@ -1,72 +1,99 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Font from '../../../../components/Font';
 import DaySwitcher from './DaySwitcher';
 
+
+const DropdownMenu = ({ visible, onClose }) => {
+  return visible ? (
+    <View style={styles.dropdownMenu}>
+      <Text>Dropdown Menu Content</Text>
+      <TouchableOpacity onPress={onClose}>
+        <Text>Close</Text>
+      </TouchableOpacity>
+    </View>
+  ) : null;
+};
+
 const MyPromiseToday = ({}) => {
-  const [activeButtonDay, setActiveButtonDay] = useState(false); 
+  const [activeButtonDay, setActiveButtonDay] = useState(false);
+  const [showDropdownMenu, setShowDropdownMenu] = useState(false);
 
   const handleSwitcherChange = () => {
     setActiveButtonDay(!activeButtonDay);
   };
-  
-  const [activeButton, setActiveButton] = useState<string>('Day');
-  
+
+  const toggleCheckImage = () => {
+    setActiveButtonDay(!activeButtonDay);
+  };
+
+  const toggleDropdownMenu = () => {
+    setShowDropdownMenu(!showDropdownMenu);
+  };
+
+  const taskCheckImages = activeButtonDay
+    ? require("../../../../assets/img/taskNoCheck.png")
+    : require("../../../../assets/img/taskCheck.png");
 
   return (
     <View style={styles.container}>
-       <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
+      <DaySwitcher value={activeButtonDay} onChange={handleSwitcherChange} />
       <View style={styles.taskContainer}>
         <View style={styles.taskHeader}>
           <Text style={styles.date}>24.08.2023</Text>
           <Image style={styles.plusImg} source={require("../../../../assets/img/plus.png")} />
         </View>
-        
-        
+
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
             <Text style={styles.taskText}>Some task 3</Text>
-            <View style={styles.taskSettingsContainer}>
-              <Image 
+            <TouchableOpacity onPress={toggleDropdownMenu} style={styles.taskSettings}>
+              <Image
                 source={require("../../../../assets/img/taskSettings.png")}
                 style={styles.taskSettingsImg}
               />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
 
         {/* Second Input */}
         <View style={[styles.inputContainer, { marginBottom: 10 }]}>
           <View style={styles.input}>
-            <Image 
-              source={require("../../../../assets/img/taskCheck.png")}
-              style={styles.taskCheckImg}
-            />
-            <Image 
+            <TouchableOpacity onPress={toggleCheckImage}>
+              <Image
+                source={taskCheckImages}
+                style={styles.taskCheckImg}
+              />
+            </TouchableOpacity>
+            <Image
               source={require("../../../../assets/img/taskReset.png")}
               style={styles.taskResetImg}
             />
-            <Text style={styles.taskText}>Some  recurrent task 2</Text>
-            <View style={styles.taskSettingsContainer}>
-              <Image 
+            <Text style={styles.taskText}>Some recurrent task 2</Text>
+            <TouchableOpacity onPress={toggleDropdownMenu} style={styles.taskSettings}>
+              <Image
                 source={require("../../../../assets/img/taskSettings.png")}
                 style={styles.taskSettingsImg}
               />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
 
       <View style={styles.newPromise}>
-          <TouchableOpacity style={styles.promiseBtn}>
-            <Image style={styles.plus} source={require("../../../../assets/img/newPromise.png")}/>
-            <Text style={styles.promiseText}>new promise</Text>
-          </TouchableOpacity>
+        <TouchableOpacity style={styles.promiseBtn}>
+          <Image style={styles.plus} source={require("../../../../assets/img/newPromise.png")} />
+          <Text style={styles.promiseText}>new promise</Text>
+        </TouchableOpacity>
       </View>
+
+      <DropdownMenu visible={showDropdownMenu} onClose={() => setShowDropdownMenu(false)} />
     </View>
   );
 };
@@ -85,7 +112,7 @@ const styles = StyleSheet.create({
   taskHeader: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between', 
+    justifyContent: 'space-between',
   },
   date: {
     color: '#5a5a5a',
@@ -116,6 +143,7 @@ const styles = StyleSheet.create({
   taskCheckImg: {
     width: 17,
     height: 17,
+    opacity: 1,
   },
   taskText: {
     color: '#fff',
@@ -125,8 +153,9 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     paddingTop: 3,
   },
-  taskSettingsContainer: {
+  taskSettings: {
     marginLeft: 'auto',
+    opacity: 1,
   },
   taskSettingsImg: {
     width: 2,
@@ -159,6 +188,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: Font["Gilroy-Regular"],
     lineHeight: 18.5,
+  },
+  dropdownMenu: {
+    position: 'absolute',
+    top: 50, 
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#000',
+    padding: 10,
   },
 });
 

@@ -19,6 +19,11 @@ export type RootStackParamList = {
   MyPromiseToday: undefined;
   Profile: undefined;
   ProfileDetails: undefined;
+  EditPromise: undefined;
+  MyPromisesToday: undefined;
+  MyPromisesTomorrow: undefined;
+  MyPromisesWeek: undefined;
+  MyPromisesMonth: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

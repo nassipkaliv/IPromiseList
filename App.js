@@ -6,7 +6,6 @@ import RegisterScreen from './views/AuthScreen/RegisterScreen';
 import font from './components/font/font';
 import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import PasswordScreen from './views/AuthScreen/PasswordScreen';
 import Navigation from './components/AuthNavigator';
 import NewPromise from './views/HomeScreen/MyPromises/NewPromise/NewPromise';
 import NewPromiseDay from './views/HomeScreen/MyPromises/NewPromise/NewPromiseDay';
