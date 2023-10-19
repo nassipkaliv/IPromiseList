@@ -60,6 +60,13 @@ const MyPromiseToday = ({}) => {
           </View>
         </View>
       </View>
+
+      <View style={styles.newPromise}>
+          <TouchableOpacity style={styles.promiseBtn}>
+            <Image style={styles.plus} source={require("../../../../assets/img/newPromise.png")}/>
+            <Text style={styles.promiseText}>new promise</Text>
+          </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -132,11 +139,13 @@ const styles = StyleSheet.create({
   },
   newPromise: {
     alignItems: 'center',
+    marginTop: 120,
   },
   promiseBtn: {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
+    justifyContent: 'center',
   },
   plus: {
     marginVertical: 2,

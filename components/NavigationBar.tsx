@@ -15,11 +15,11 @@ const profileName = "Profile";
 
 const Tab = createBottomTabNavigator();
 
-const TabIcon = ({ focused, icon }) => {
+const TabIcon = ({ focused, icon, isHomeIcon }) => {
   return (
     <Image
       source={focused ? icon.active : icon.inactive}
-      style={{ width: 24, height: 24 }}
+      style={{ width: isHomeIcon ? 26 : 24, height: isHomeIcon ? 26 : 26 }}
     />
   );
 };
@@ -36,7 +36,7 @@ function NavigationBar() {
             paddingBottom: 0,
             marginVertical: 15,
           },
-          tabBarLabelStyle: { fontSize: 12, marginTop: 0, marginBottom: 20,},
+          tabBarLabelStyle: { fontSize: 12, marginTop: 10, marginBottom: 10 },
           tabBarStyle: {
             height: 160,
             borderTopLeftRadius: 774,
@@ -46,7 +46,7 @@ function NavigationBar() {
             fontFamily: Font["Gilroy-Regular"],
           },
           tabBarIconStyle: {
-            marginBottom: -20,
+            marginBottom: -30,
           },
           headerShown: false,
 
@@ -61,15 +61,15 @@ function NavigationBar() {
               icon.active = require('../assets/img/notificationIconActive.png');
               icon.inactive = require('../assets/img/notificationIcon.png');
             } else if (rn === profileName) {
-              icon.active = require('../assets/img/profileIcon.png');
+              icon.active = require('../assets/img/profileIconActive.png');
               icon.inactive = require('../assets/img/profileIcon.png');
             }
 
-            return <TabIcon focused={focused} icon={icon} />;
+            return <TabIcon focused={focused} icon={icon} isHomeIcon={rn === homeName} />;
           },
         })}
       >
-        <Tab.Screen name={homeName} component={HomeScreen} />
+        <Tab.Screen name={homeName} component={HomeScreen} options={{ isHomeIcon: true }} />
         <Tab.Screen name={notificationName} component={NotificationScreen} />
         <Tab.Screen name={profileName} component={ProfileScreen} />
       </Tab.Navigator>

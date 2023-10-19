@@ -29,9 +29,10 @@ const HomeScreen: React.FC = ({ }) => {
       <Switcher value={activeButton} onChange={handleSwitcherChange} />
       {/* MyPromise включите, если хотите взглянуть что то из MyPromise... */}
       <MyPromise value={activeButton} onChange={handleSwitcherChange} />      
-      <MyPromiseToday />
+      {/* <MyPromiseToday /> */}
+      {/* <MyPromiseTomorrow /> */}
       {/* <MyPromiseWeek /> */}
-      {/* <MyPromiseMonth /> */}
+      <MyPromiseMonth />
       {/* <CategoriesAll /> */}
       {/* <CategoriesInstalled /> */}
     </ScrollView>

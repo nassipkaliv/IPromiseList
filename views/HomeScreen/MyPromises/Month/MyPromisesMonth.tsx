@@ -147,7 +147,9 @@ const styles = StyleSheet.create({
   calendar: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    // justifyContent: 'center',
+    width: '100%',
+    paddingHorizontal: 20,
     marginVertical: 0,
   },
   separatorContainer: {
