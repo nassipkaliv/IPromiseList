@@ -24,14 +24,18 @@ const NewPromise: React.FC = ({}) => {
           />
         <View style={styles.editContainer}>
           <View style={styles.imgs}>
-            <Image 
-              style={styles.delete}
-              source={require("../../../../assets/img/delete.png")}
-            />
-            <Image 
-              style={styles.approve}
-              source={require("../../../../assets/img/approve.png")}
-            />
+            <TouchableOpacity>
+              <Image 
+                style={styles.delete}
+                source={require("../../../../assets/img/delete.png")}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image 
+                style={styles.approve}
+                source={require("../../../../assets/img/approve.png")}
+              />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.promiseContainer}>
